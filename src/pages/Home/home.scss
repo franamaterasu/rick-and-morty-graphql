@@ -1,0 +1,11 @@
+.no-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 57px);
+
+  &__intro {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+  }
+}
