@@ -73,12 +73,19 @@ function App() {
     setOrder(e.target.value);
   };
 
+  const handleResetClick = () => {
+    setSearchValue("");
+    setSelectValue("");
+    setOrder("");
+  };
+
   return (
     <Router>
       <Header
         handleOnChange={handleOnChange}
         handleSelectChange={handleSelectChange}
         handleSelectOrderChange={handleSelectOrderChange}
+        handleResetClick={handleResetClick}
       />
       <Switch>
         <Route exact path="/">

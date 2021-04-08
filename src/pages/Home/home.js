@@ -19,7 +19,7 @@ const Home = (props) => {
         <List cards={cards} />
       ) : selectValue === "" && value !== "" ? (
         <List cards={filterByName} />
-      ) : filterByName.length === 0 ? (
+      ) : filterByName.length < 1 ? (
         <section className="no-results">
           <p className="no-results__intro">No existen resultados</p>
         </section>
