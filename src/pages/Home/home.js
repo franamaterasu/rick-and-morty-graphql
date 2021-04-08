@@ -13,11 +13,14 @@ const Home = (props) => {
     return filterName;
   });
 
+  console.log(value);
+  console.log(selectValue);
+
   return (
     <section className="home">
-      {selectValue === undefined && value === "" ? (
+      {selectValue === "" && value === "" ? (
         <List cards={cards} />
-      ) : selectValue === undefined && value !== "" ? (
+      ) : selectValue === "" && value !== "" ? (
         <List cards={filterByName} />
       ) : filterByName.length === 0 ? (
         <section className="no-results">

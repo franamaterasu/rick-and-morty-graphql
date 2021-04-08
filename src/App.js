@@ -27,7 +27,7 @@ const AllCharacters = gql`
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
-  const [selectValue, setSelectValue] = useState();
+  const [selectValue, setSelectValue] = useState("");
   const { data, loading, error } = useQuery(AllCharacters);
 
   if (loading) {
