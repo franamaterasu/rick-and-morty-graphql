@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./app.scss";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -30,11 +31,19 @@ function App() {
   const { data, loading, error } = useQuery(AllCharacters);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <section className="message">
+        <p className="message__text">Loading...</p>
+      </section>
+    );
   }
 
   if (error) {
-    return <p>Error...</p>;
+    return (
+      <section className="message">
+        <p className="message__text">Error...</p>
+      </section>
+    );
   }
 
   const characters = data.characters.results;

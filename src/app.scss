@@ -1,0 +1,12 @@
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 57px);
+
+  &__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+  }
+}

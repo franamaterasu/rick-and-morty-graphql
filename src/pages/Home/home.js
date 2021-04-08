@@ -6,6 +6,8 @@ const Home = (props) => {
   const value = props.searchValue;
   const selectValue = props.selectValue;
 
+  console.log(selectValue);
+
   const filterByName = cards.filter((card) => {
     let filterName =
       card.name.toLowerCase().includes(value.toLowerCase()) &&
@@ -15,7 +17,9 @@ const Home = (props) => {
 
   return (
     <section className="home">
-      {filterByName.length < 1 ? (
+      {selectValue === undefined ? (
+        <List cards={cards} />
+      ) : filterByName.length === 0 ? (
         <section className="no-results">
           <p className="no-results__intro">No existen resultados</p>
         </section>
