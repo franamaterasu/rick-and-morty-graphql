@@ -28,6 +28,7 @@ const AllCharacters = gql`
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectValue, setSelectValue] = useState("");
+  const [order, setOrder] = useState("init");
   const { data, loading, error } = useQuery(AllCharacters);
 
   if (loading) {
@@ -46,7 +47,17 @@ function App() {
     );
   }
 
-  const characters = data.characters.results;
+  const characters = Object.values(data.characters.results);
+
+  const orderCharacters = () => {
+    if (order === "init") {
+      characters.sort((a, b) => (a.name > b.name ? 1 : -1));
+    } else {
+      characters.sort((a, b) => (a.name > b.name ? -1 : 1));
+    }
+  };
+
+  orderCharacters();
 
   const handleOnChange = (e) => {
     setSearchValue(e.target.value);
@@ -56,11 +67,16 @@ function App() {
     setSelectValue(e.target.value);
   };
 
+  const handleSelectOrderChange = (e) => {
+    setOrder(e.target.value);
+  };
+
   return (
     <Router>
       <Header
         handleOnChange={handleOnChange}
         handleSelectChange={handleSelectChange}
+        handleSelectOrderChange={handleSelectOrderChange}
       />
       <Switch>
         <Route exact path="/">

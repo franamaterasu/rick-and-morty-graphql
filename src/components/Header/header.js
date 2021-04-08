@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import "./header.scss";
 
-const Header = ({ handleOnChange, handleSelectChange }) => {
+const Header = ({
+  handleOnChange,
+  handleSelectChange,
+  handleSelectOrderChange,
+}) => {
   return (
     <header className="header">
       <Link to="/" className="header__logo">
@@ -19,6 +23,11 @@ const Header = ({ handleOnChange, handleSelectChange }) => {
           <option value="Alive">Alive</option>
           <option value="Dead">Dead</option>
           <option value="unknown">Unknown</option>
+        </select>
+        <select onChange={handleSelectOrderChange} className="header__select">
+          <option value="">Select Order</option>
+          <option value="init">A-Z</option>
+          <option value="finish">Z-A</option>
         </select>
       </form>
     </header>

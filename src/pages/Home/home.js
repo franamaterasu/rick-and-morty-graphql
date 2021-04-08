@@ -13,9 +13,6 @@ const Home = (props) => {
     return filterName;
   });
 
-  console.log(value);
-  console.log(selectValue);
-
   return (
     <section className="home">
       {selectValue === "" && value === "" ? (
