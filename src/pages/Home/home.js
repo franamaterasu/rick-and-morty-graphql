@@ -6,8 +6,6 @@ const Home = (props) => {
   const value = props.searchValue;
   const selectValue = props.selectValue;
 
-  console.log(selectValue);
-
   const filterByName = cards.filter((card) => {
     let filterName =
       card.name.toLowerCase().includes(value.toLowerCase()) &&

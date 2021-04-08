@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./card.scss";
 
 const Card = (props, handleClick) => {
@@ -7,7 +8,9 @@ const Card = (props, handleClick) => {
 
   return (
     <article className="card" onClick={handleClick}>
-      <img className="card__image" src={image} alt={name} />
+      <Link to={`./character/${name}`}>
+        <img className="card__image" src={image} alt={name} />
+      </Link>
       <p className="card__info">
         {name} - <span>{status}</span>
       </p>

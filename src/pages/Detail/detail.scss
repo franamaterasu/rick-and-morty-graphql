@@ -1,0 +1,31 @@
+.detail {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 57px);
+  justify-content: center;
+  width: 100%;
+
+  &-info {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+
+  &-info__image {
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
+  &-info__title {
+    font-size: 33px;
+    margin-bottom: 10px;
+  }
+
+  &-info__line {
+    font-size: 17px;
+    margin-bottom: 8px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

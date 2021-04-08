@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import "./header.scss";
 
 const Header = ({ handleOnChange, handleSelectChange }) => {
   return (
     <header className="header">
-      <h1 className="header__logo">Rick & Morty</h1>
+      <Link to="/" className="header__logo">
+        <h1>Rick & Morty</h1>
+      </Link>
       <form className="header__form">
         <input
           type="text"
