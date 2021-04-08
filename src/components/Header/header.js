@@ -6,6 +6,9 @@ const Header = ({
   handleSelectChange,
   handleSelectOrderChange,
   handleResetClick,
+  searchValue,
+  selectValue,
+  order,
 }) => {
   return (
     <header className="header">
@@ -30,11 +33,15 @@ const Header = ({
           <option value="init">A-Z</option>
           <option value="finish">Z-A</option>
         </select>
-        <input
-          className="header__input header__input--reset"
-          type="reset"
-          onClick={handleResetClick}
-        ></input>
+        {searchValue !== "" || selectValue !== "" || order !== "" ? (
+          <input
+            className="header__input header__input--reset"
+            type="reset"
+            onClick={handleResetClick}
+          ></input>
+        ) : (
+          ""
+        )}
       </form>
     </header>
   );

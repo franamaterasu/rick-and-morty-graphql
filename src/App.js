@@ -86,6 +86,9 @@ function App() {
         handleSelectChange={handleSelectChange}
         handleSelectOrderChange={handleSelectOrderChange}
         handleResetClick={handleResetClick}
+        searchValue={searchValue}
+        selectValue={selectValue}
+        order={order}
       />
       <Switch>
         <Route exact path="/">
