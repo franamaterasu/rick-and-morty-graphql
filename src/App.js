@@ -28,7 +28,7 @@ const AllCharacters = gql`
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [selectValue, setSelectValue] = useState("");
-  const [order, setOrder] = useState("init");
+  const [order, setOrder] = useState("");
   const { data, loading, error } = useQuery(AllCharacters);
 
   if (loading) {
@@ -52,7 +52,9 @@ function App() {
   const orderCharacters = () => {
     if (order === "init") {
       characters.sort((a, b) => (a.name > b.name ? 1 : -1));
-    } else {
+    }
+
+    if (order === "finish") {
       characters.sort((a, b) => (a.name > b.name ? -1 : 1));
     }
   };
