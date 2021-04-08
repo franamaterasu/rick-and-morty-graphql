@@ -17,7 +17,7 @@ const Home = (props) => {
 
   return (
     <section className="home">
-      {selectValue === undefined ? (
+      {selectValue === "all" || selectValue === undefined ? (
         <List cards={cards} />
       ) : filterByName.length === 0 ? (
         <section className="no-results">
