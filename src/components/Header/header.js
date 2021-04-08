@@ -16,7 +16,6 @@ const Header = ({ handleOnChange, handleSelectChange }) => {
         />
         <select onChange={handleSelectChange} className="header__select">
           <option value="">Select Status</option>
-          <option value="all">All</option>
           <option value="Alive">Alive</option>
           <option value="Dead">Dead</option>
           <option value="unknown">Unknown</option>

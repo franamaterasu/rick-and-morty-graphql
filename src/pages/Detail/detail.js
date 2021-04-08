@@ -11,8 +11,6 @@ const Detail = (props) => {
 
   const { image, name, status, origin } = foundCharacter;
 
-  console.log(foundCharacter);
-
   return (
     <section className="detail">
       <div className="detail-info">
